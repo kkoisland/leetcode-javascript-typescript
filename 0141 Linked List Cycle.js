@@ -20,13 +20,13 @@ Input: head = [1], pos = -1
 Output: false
 Explanation: There is no cycle in the linked list.
 */
-/**
- * Definition for singly-linked list.
- * function ListNode(val) {
- *     this.val = val;
- *     this.next = null;
- * }
- */
+
+// Definition for singly-linked list.
+function ListNode(val) {
+    this.val = val;
+    this.next = null;
+}
+
 
 /**
  * @param {ListNode} head
@@ -46,3 +46,15 @@ Explanation: There is no cycle in the linked list.
     }
     return false;  
 };
+
+// Validate
+const list1 = new ListNode(1);
+const list2 = new ListNode(2);
+const list3 = new ListNode(3);
+
+list1.next = list2;
+list2.next = list3;
+list3.next = list1;
+console.log(hasCycle(list1)) // true
+// list3.next = null;
+// console.log(hasCycle(list1)) // false
