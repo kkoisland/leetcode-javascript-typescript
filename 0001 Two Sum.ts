@@ -25,7 +25,7 @@ function twoSum(nums: number[], target: number): number[] {
 };
  */
 
-// Solution #1 (ignore type complain) done by Akih
+// Solution #1 (ignore type complain), Runtime: 102 ms
 function twoSum(nums: number[], target: number): number[] {
   return nums.reduce((acc: number[], cur: number, i: number) => {
     for (let j: number = i + 1; j < nums.length; j++) {

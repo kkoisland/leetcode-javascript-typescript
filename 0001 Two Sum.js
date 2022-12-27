@@ -24,7 +24,7 @@ Start from:
 var twoSum = function(nums, target) {
  */
 
-// Solution #1 Two for loops
+// Solution #1 Two for loops, Runtime: 95 ms
 var twoSum = function(nums, target) { 
     let numsArray = nums;
     for( let i = 0; i < numsArray.length; i++){
@@ -38,7 +38,7 @@ var twoSum = function(nums, target) {
   };
   console.log(twoSum([3,2,4], 7)); //[0,2]
   
-// Solution #2 better done by Akih
+// Solution #2 better done by Akih, Runtime: 79 ms
 var twoSum = function(nums, target) { 
   return nums.reduce((acc, cur, i) => {
     for (let j = i + 1; j < nums.length; j++ ) {

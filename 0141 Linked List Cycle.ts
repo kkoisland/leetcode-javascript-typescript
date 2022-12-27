@@ -21,6 +21,7 @@ Output: false
 Explanation: There is no cycle in the linked list.
 */
 
+// Runtime: 91 ms
 var hasCycle = function(head: ListNode) { 
     if (head === null) return false;
     let fast: ListNode | null = head;

@@ -32,6 +32,17 @@ Explanation: There is no cycle in the linked list.
  * @param {ListNode} head
  * @return {boolean}
  */
- var hasCycle = function(head) {
-    
+
+// Runtime: 83 ms
+ var hasCycle = function(head) { // JavaScript
+    if (head === null) return false;
+    let fast = head;
+    let slow = head;
+    while (fast !== null){
+        if (fast.next !== null) fast = fast.next.next;
+        else return false;
+        slow=slow.next;
+        if (fast === slow) return true;
+    }
+    return false;  
 };
