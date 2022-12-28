@@ -1,3 +1,5 @@
+// Runtime 64 ms Beats 97.14%
+
 function isValid(s: string): boolean {
     const brackets = {
        '(': ')',
@@ -28,7 +30,6 @@ function isValid(s: string): boolean {
         const close = brackets[char];
         if (close) stack.push(close);
         if (stack[stack.length - 1] === char) stack.pop();
-        
     });
 
     if (error) return false;
