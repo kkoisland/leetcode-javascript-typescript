@@ -26,7 +26,6 @@ function isValid(s: string): boolean {
         if(flags[bracketsrev[char]] === -1) {stack = ['1']; return true}
         const close = brackets[char];
         if (close) stack.push(close);
-        if (flags[char] === 0 && brackets[char] !== '') {stack = ['1']; return true}
         if (stack[stack.length - 1] === char) stack.pop();
         
    });
@@ -35,4 +34,3 @@ function isValid(s: string): boolean {
    return false;
 
 };
-
