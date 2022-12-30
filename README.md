@@ -8,3 +8,5 @@
 [0104 Maximum Depth of Binary Tree](https://leetcode.com/problems/maximum-depth-of-binary-tree/) - Easy  
 [0121 Best Time to Buy and Sell Stock](https://leetcode.com/problems/best-time-to-buy-and-sell-stock/) - Easy  
 [0035 Search Insert Position](https://leetcode.com/problems/search-insert-position/) - Easy  
+[0703 Kth Largest Element in a Stream](https://leetcode.com/problems/kth-largest-element-in-a-stream/) - Easy  
+[0053 Maximum Subarray](https://leetcode.com/problems/maximum-subarray/) - Easy  
