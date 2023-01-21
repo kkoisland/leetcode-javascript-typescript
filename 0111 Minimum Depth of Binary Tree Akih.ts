@@ -11,6 +11,7 @@
  *     }
  * }
  */
+Runtime 245 ms Beats 94.39% Memory 100 MB Beats 14.49% 49
 
 function minDepth(root: TreeNode | null): number {
     let l: number = 0; 
