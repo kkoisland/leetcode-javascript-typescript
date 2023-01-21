@@ -22,16 +22,17 @@ Output: 2
  * @param {TreeNode} root
  * @return {number}
  */
-// Thanks to Akih, Runtime 73 ms Beats 84.95
+// Thanks to Akih! Runtime 73 ms Beats 84.95
  var maxDepth = function(root) {
     let leftResult = 0;
     let rightResult = 0;
     if (!root) return 0; 
-    if (root.left) leftResult = maxDepth(root.left);
     if (root.right) rightResult = maxDepth(root.right);
+    if (root.left) leftResult = maxDepth(root.left);
 
-    // console.log(`right: ${rightResult}`)
-    // console.log(`left: ${leftResult}`)
+    // console.log(`val: ${root.val}`)
+    // console.log(`${root.right?.val} right: ${rightResult}`)
+    // console.log(`${root.left?.val} left: ${leftResult}`)
     // console.log('----------------')
     return Math.max(leftResult, rightResult)+1;
 };
@@ -46,5 +47,5 @@ root.left = e1;
 root.right = e2;
 e2.left = e3;
 e2.right = e4;
-console.log(maxDepth(null)); // 0
+// console.log(maxDepth(null)); // 0
 console.log(maxDepth(root)); // 3
