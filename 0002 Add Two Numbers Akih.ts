@@ -1,7 +1,7 @@
-// Runtime 165 ms Beats 38.12% Memory 48.7 MB Beats 29.91%
+// Runtime  106 ms  Beats  87.4%  Memory  48.1 MB  Beats  68.79%  
 
 function addTwoNumbers(l1: ListNode | null, l2: ListNode | null): ListNode | null {
-    let result: ListNode = new ListNode(null);
+    let result: ListNode = new ListNode(0);
     let sum: number = (l1 ? l1.val : 0) + (l2 ? l2.val : 0);
     result.val = sum % 10;
     if (sum >= 10) {
