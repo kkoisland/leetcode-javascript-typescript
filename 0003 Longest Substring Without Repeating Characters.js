@@ -24,6 +24,8 @@ Notice that the answer must be a substring, "pwke" is a subsequence and not a su
  * @param {string} s
  * @return {number}
  */
+
+// Thanks to Akih: Runtime 1123 ms Beats 5.2% Memory 49 MB Beats 24.35%
 var lengthOfLongestSubstring = function (s) {
   let arr = [];
   let len = 0;
