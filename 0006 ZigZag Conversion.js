@@ -34,61 +34,51 @@ Output: "A"
  * @return {string}
  */
 
+// Thanks to Akih! Runtime 143 ms Beats 22.32% Memory 52.4 MB Beats 11.88%
 var convert = function(s, numRows) {
-    const inputArray = s.split('');
+    if (numRows === 1) return s;
+    // const inputArray = s.split('');
 
-    // numRowsに従ってArreyを数字順に作成する
     const array =[];
     for (let i = 0; i < numRows; i++){
         array[i] = [];
     }
 
-    // 上から下へ入れる場合: numRowsの数だけ、すべてのArrayに１文字ずつ入れていく
-    for (let x; x<numRows; x++){
-        for (let y = 0; y < inputArray.length; y++ ){
-            array[x][y] = inputArray[y];
-        }
-    }
-    // 下から上へ入れる場合: numRowsの最初と最後をスキップし、下から上へ入れる
+    let x = 0;
+    let y = 0;
+    let onepack = numRows * 2 - 2;
+    let pack = 0;
 
-    // Array を数字順に読んだ結果をjoin('')してリターンする
+    for (let j = 0; j < s.length; j++) {
+      pack = parseInt(j / onepack);
+
+      if (j % onepack <= numRows - 1) {
+        y = j % onepack;
+        x = pack * (numRows - 1);
+      }
+      if (j % onepack > numRows - 1) {
+        y = onepack - (j % onepack);
+        x = j - (numRows - 1) - ((numRows - 1) * pack);
+      }
+      array[y][x] = s[j];
+    //   console.log(`x: ${x}, y: ${y}, j: ${s[j]}`)
+    }
+
     // array[1]= ['z'];
+    // console.log(array.toString());
     let outputArray = '';
     for (let i=0; i < numRows; i++){
         outputArray = outputArray + array[i].join('');
     }
     return outputArray;
-
-    // const Array1 = [];
-    // const Array2 = [];
-    // for (i=0; i<inputArray.length; i++){
-    //     if (i%2 === 0) Array1.push(inputArray[i]);
-    //     else Array2.push(inputArray[i]);
-    // }
-
-    // return Array1.join('')+Array2.join('');
 };
 
-// var convert = function(s, numRows) {
-//     const inputArray = s.split('');
-//     // for (j=0; j<s; j++){
-
-//     // }
-
-//     const Array1 = [];
-//     const Array2 = [];
-//     for (i=0; i<inputArray.length; i++){
-//         if (i%2 === 0) Array1.push(inputArray[i]);
-//         else Array2.push(inputArray[i]);
-//     }
-
-//     return Array1.join('')+Array2.join('');
-// };
- 
-console.log(convert('12345', 2)); // 13524
-// console.log(convert('abc', 2)); // acb
-// console.log(convert('abc', 3)); // abc
-// console.log(convert('abcde', 2)); // acebd
-// console.log(convert('PAYPALISHIRING', 3)); // PAHNAPLSIIGYIR
-// console.log(convert('PAYPALISHIRING', 4)); // PINALSIGYAHRPI
-// console.log(convert('A', 1)); // A
+console.log(convert('123456789', 3)); //159246837
+console.log(convert('12345', 3)); // 15243
+console.log(convert('abc', 2)); // acb
+console.log(convert('abc', 3)); // abc
+console.log(convert('abcde', 2)); // acebd
+console.log(convert('PAYPALISHIRING', 1)); // 
+console.log(convert('PAYPALISHIRING', 3)); // PAHNAPLSIIGYIR
+console.log(convert('PAYPALISHIRING', 4)); // PINALSIGYAHRPI
+console.log(convert('A', 1)); // A
